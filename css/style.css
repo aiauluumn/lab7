@@ -1,0 +1,200 @@
+/* Зертханалық жұмыс № 7 — ортақ стиль файлы */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --accent: #06b6d4;
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(79, 70, 229, 0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a { color: var(--primary); text-decoration: none; }
+
+/* ===== Жоғарғы навигация ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+.navbar .inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.logo { font-weight: 800; font-size: 1.2rem; color: var(--primary); }
+.navbar ul { list-style: none; display: flex; gap: 6px; flex-wrap: wrap; }
+.navbar ul a {
+  display: block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--text);
+  font-weight: 500;
+  transition: 0.25s;
+}
+.navbar ul a:hover,
+.navbar ul a.active { background: var(--primary); color: #fff; }
+
+/* ===== Басты баннер ===== */
+.hero {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  text-align: center;
+  padding: 90px 20px 110px;
+  position: relative;
+}
+.hero h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 14px; }
+.hero p { max-width: 700px; margin: 0 auto 26px; font-size: 1.1rem; opacity: 0.95; }
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+.btn {
+  display: inline-block;
+  background: #fff;
+  color: var(--primary-dark);
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: 0.25s;
+}
+.btn:hover { transform: translateY(-3px); }
+
+/* ===== Контейнер ===== */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 60px 0; }
+.section-title { text-align: center; font-size: 2rem; margin-bottom: 8px; }
+.section-sub { text-align: center; color: var(--muted); margin-bottom: 40px; }
+
+/* ===== Қатысушылар карточкалары ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 30px 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+  border-top: 5px solid var(--primary);
+}
+.card:hover { transform: translateY(-8px); }
+.avatar {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card h3 { margin-bottom: 6px; }
+.card p { color: var(--muted); margin-bottom: 18px; font-size: 0.95rem; }
+.card .link {
+  display: inline-block;
+  padding: 9px 22px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  transition: 0.25s;
+}
+.card .link:hover { background: var(--primary-dark); }
+
+/* ===== Ақпарат блоктары ===== */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.info-box {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+.info-box h3 { color: var(--primary); margin-bottom: 10px; }
+.info-box ul { padding-left: 20px; }
+
+/* ===== Жеке бет ===== */
+.profile {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px;
+  margin-top: -60px;
+  position: relative;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.profile .avatar { width: 130px; height: 130px; font-size: 3.2rem; margin: 0; }
+.profile h2 { font-size: 1.8rem; }
+.profile .role { color: var(--primary); font-weight: 600; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.tag {
+  background: #e0e7ff;
+  color: var(--primary-dark);
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.back {
+  display: inline-block;
+  margin: 40px 0 10px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  transition: 0.25s;
+}
+.back:hover { background: var(--primary-dark); }
+
+/* ===== Төменгі колонтитул ===== */
+footer {
+  background: #1e1b4b;
+  color: #c7d2fe;
+  text-align: center;
+  padding: 28px 20px;
+  margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+  .profile { padding: 26px; text-align: center; justify-content: center; }
+  .hero { padding: 60px 20px 90px; }
+}

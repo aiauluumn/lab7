@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Жұмыс барысы — Git командалары</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .step { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+            padding: 26px; margin-bottom: 22px; border-left: 6px solid var(--primary); }
+    .step h3 { color: var(--primary); margin-bottom: 8px; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 10px;
+          margin: 10px 0; overflow-x: auto; font-size: 0.95rem; }
+    table { width: 100%; border-collapse: collapse; background: var(--card);
+            border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    th, td { padding: 14px 18px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+    th { background: var(--primary); color: #fff; }
+    td:first-child { font-family: Consolas, monospace; color: var(--primary-dark); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="inner">
+      <span class="logo">🚀 Командалық жоба</span>
+      <ul>
+        <li><a href="index.html">Басты бет</a></li>
+        <li><a href="student1.html">Аяулым</a></li>
+        <li><a href="student2.html">Дана</a></li>
+        <li><a href="student3.html">Нұрлан</a></li>
+        <li><a href="student4.html">Айдос</a></li>
+        <li><a href="steps.html" class="active">Жұмыс барысы</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="badge">Зертханалық жұмыс № 7</span>
+    <h1>Жұмыс барысы</h1>
+    <p>GitHub-та командалық жобаны дамытудың қадам-қадам нұсқаулығы</p>
+  </header>
+
+  <main class="container">
+    <section class="section">
+
+      <div class="step">
+        <h3>1-қадам. Жобаның ағымдағы күйін жаңарту</h3>
+        <p>Репозиторий орналасқан каталогқа өтіп, негізгі тармаққа ауысыңыз және соңғы өзгерістерді жүктеңіз:</p>
+        <pre>git checkout master
+git pull upstream master</pre>
+      </div>
+
+      <div class="step">
+        <h3>2-қадам. Жаңа функционал үшін бөлек тармақ құру</h3>
+        <pre>git checkout -b feature-update
+git branch</pre>
+      </div>
+
+      <div class="step">
+        <h3>3-қадам. Жобаны толықтыру (топтық жұмыс)</h3>
+        <p>Басты index.html файлын жасаңыз немесе жаңартыңыз және барлық қатысушылардың беттеріне сілтемелер қосыңыз. Файлды сақтаңыз.</p>
+      </div>
+
+      <div class="step">
+        <h3>4-қадам. Өзгерістерді тексеру және сақтау</h3>
+        <pre>git status
+git add index.html
+git commit -m "Қатысушылар беттеріне сілтемелер қосылды"</pre>
+      </div>
+
+      <div class="step">
+        <h3>5-қадам. Өз тармағын GitHub-қа жіберу</h3>
+        <pre>git push origin feature-update</pre>
+      </div>
+
+      <div class="step">
+        <h3>6-қадам. Pull Request арқылы модерациялау</h3>
+        <p>GitHub-та өз репозиторийіңізге өтіп, <b>Compare &amp; Pull Request</b> батырмасын басыңыз. Сипаттама: «Барлық қатысушылар беттерін біріктіретін басты бет жаңартылды». Содан кейін Pull Request жіберіңіз.</p>
+      </div>
+
+      <div class="step">
+        <h3>7-қадам. Кодты тексеру (Code Review)</h3>
+        <p>Топ жетекшісі кодтың құрылымын, HTML стандарттарына сәйкестігін және файл атауларының дұрыстығын тексереді. Қажет болса, пікір қалдырады немесе түзету сұрайды.</p>
+      </div>
+
+      <div class="step">
+        <h3>8-қадам. Нұсқаларды басқару және біріктіру</h3>
+        <p>Түзетулер енгізілген соң Pull Request қабылданады және <b>Merge pull request</b> арқылы негізгі тармаққа біріктіріледі. Қолданылған тармақ жойылады.</p>
+      </div>
+
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Командаларға нұсқаулық</h2>
+      <p class="section-sub">Қысқаша түсініктеме</p>
+      <table>
+        <thead>
+          <tr><th>Команда</th><th>Міндеті</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>git status</td><td>Репозиторий күйін көру</td></tr>
+          <tr><td>git branch</td><td>Тармақтар тізімі</td></tr>
+          <tr><td>git checkout -b &lt;name&gt;</td><td>Жаңа тармақ құру</td></tr>
+          <tr><td>git pull upstream master</td><td>Негізгі репозиторийден жаңарту</td></tr>
+          <tr><td>git add .</td><td>Өзгерістерді қосу</td></tr>
+          <tr><td>git commit -m "мәтін"</td><td>Коммит жасау</td></tr>
+          <tr><td>git push origin &lt;branch&gt;</td><td>Өзгерістерді жіберу</td></tr>
+          <tr><td>git merge</td><td>Тармақтарды біріктіру</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <a class="back" href="index.html">← Басты бетке оралу</a>
+  </main>
+
+  <footer>
+    <p>© 2026 Командалық жоба · Зертханалық жұмыс № 7</p>
+  </footer>
+
+</body>
+</html>
